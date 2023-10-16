@@ -46,9 +46,6 @@ def recognize(target_username):
     waveFile.writeframes(b''.join(frames))
     waveFile.close()
 
-    modelpath = "../gmm_models/"
-    gmm_files = [os.path.join(modelpath,fname) for fname in os.listdir(modelpath) if fname.endswith('.gmm')]
-
 # Find the GMM model for the target username
     # # target_model = None
     # # for fname in gmm_files:
@@ -76,6 +73,8 @@ def recognize(target_username):
         print("Not Recognized! Try again...")
 
 # Checking all models
+    # modelpath = "../gmm_models/"
+    # gmm_files = [os.path.join(modelpath,fname) for fname in os.listdir(modelpath) if fname.endswith('.gmm')]
     # models = [pickle.load(open(fname,'rb')) for fname in gmm_files]
     # speakers = [fname.split("/")[-1].split(".gmm")[0] for fname in gmm_files]
 
